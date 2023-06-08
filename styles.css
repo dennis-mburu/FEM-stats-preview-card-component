@@ -42,16 +42,31 @@ body {
 
 .container{
     display: flex;
-    width: 80%;
-    /* max-height:445px; */
-    height:445px;
+    /* width: 70%; */
+    max-height:25rem;
+    margin: 0 10%
 
     /* background-color: beige; */
-    /* flex-wrap: wrap; */
+    /* flex-wrap:wrap-reverse; */
     /* border-radius: 15px; */
     /* margin: 0 5rem; */
 
 }
+
+.container > div {
+    flex: 1;
+    min-width: 27rem;
+}
+
+/* .container div:first-of-type{
+    min-width: 445px;
+    min-width: 27.813rem;
+    
+}
+.container div:last-of-type{
+    min-width: 445px;
+    
+} */
 
 .details-container{
     background-color: var(--dark-desaturated-blue);
@@ -59,22 +74,50 @@ body {
     border-radius: 10px 0 0 10px;
     /* width:27.5rem; */
     /* flex-shrink: 0; */
-    width: 50%;
+    /* width: 50%; */
     overflow:auto;
 }
 
 .details{
-    width: 70%;
+    /* background-color: var(--dark-desaturated-blue); */
+
+    /* width: 70%; */
     /* min-height: 80%; */
-    margin: auto ;
-    margin-top: 5rem;
+    margin: 3rem 3rem 0 3rem;
+    max-height: 100%;
+    /* margin-top: 5rem; */
     /* margin-left: 5rem; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: end; */
 }
+
+.details h1{
+    margin-top: 0;
+}
+
+.details .figures-container {
+    /* justify-self: flex-end; */
+}
+
+.details h1, .figures-container h3{
+    color: var(--plain-white);
+}
+
+.details > h1 >span {
+    color: var(--soft-violet)
+}
+
+.details  p{
+    color: var(--slightly-transparent-white)
+}
+
+
 
 .figures-container{
     display: flex;
     justify-content: space-between;
-    margin-top: 4rem;
+    margin-top: 1rem;
     /* flex-wrap: wrap; */
 }
 
@@ -83,15 +126,59 @@ body {
     /* background-image: url(./images/image-header-desktop.jpg); */
     border-radius: 0 10px 10px 0;
     /* min-width:27.5rem; */
+    
 
 
 }
 img{
     width: 100%;
+    max-height: 25rem;
     /* min-width:27.5rem; */
-
     opacity: 49%;
+    /* object-fit: cover; */
     border-radius: 0 10px 10px 0;
 }
 
 
+@media(max-width:867px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        max-height: 90vh
+        /* height: 100%; */
+        /* overflow: scroll; */
+    }
+
+    .container > div {
+        flex: 1;
+        min-width: 375px;
+        /* margin: 0 2rem; */
+    }
+
+    .container  .img-container {
+        /* order: 1; */
+        /* flex: 1; */
+        /* min-width: 27rem; */
+        border-radius: 10px 10px 0 0;
+    }
+
+
+    
+    img{
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .details-container{
+        overflow:visible;
+        order: 2;
+    }
+    .details{
+        text-align: center;
+        /* width: 100%; */
+    }
+    .figures-container{
+        display: block
+    }
+}
